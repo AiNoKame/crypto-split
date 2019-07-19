@@ -21,6 +21,7 @@ class AppMain extends Component {
     request.post('http://localhost:8080/api/v1/checkin', {
       form: {
         account_id: localStorage.getItem('walletAddress'),
+        account_name: localStorage.getItem('name'),
         table_number: 1
       }
     },
