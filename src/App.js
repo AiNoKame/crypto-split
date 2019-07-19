@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MyQrReader from './QrReader.js';
+import Button from 'react-bootstrap/Button';
 
 var qrData = '';
 
@@ -19,6 +20,13 @@ function App() {
         </p>
         <MyQrReader setQrDataChild={setQrDataParent} />
         <p>{qrData}</p>
+        {
+          qrData ?
+            <Button variant="primary" size="lg">
+              CHECK OUT
+            </Button>
+            : null
+        }
       </header>
     </div>
   );
