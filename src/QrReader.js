@@ -3,18 +3,16 @@ import QrReader from 'react-qr-reader'
 
 class MyQrReader extends Component {
   state = {
-    result: 'No result',
     showViewFinder: true
   }
 
   handleScan = data => {
     if (data) {
       this.setState({
-        result: data,
         showViewFinder: false
       })
 
-      this.props.setQrDataChild(data)
+      this.props.setQrDataChild('Restaurant Info: ' + data)
     }
   }
 
@@ -36,7 +34,6 @@ class MyQrReader extends Component {
             />
             : null
         }
-        {this.state.result}
       </div>
     )
   }
